@@ -2,35 +2,34 @@
 #include "matrices.h"
 
 int main(void) {
-    int triangle[10] = {};
+    const double matrice1[3][3] =
+        {{12 , 32.4, 12  },
+         {4.2, 32  , 1.5 },
+         {7.5, 8   , 3.53}};
 
-    *get_tr(3, 2, triangle) = 10;
-    print_triangle(5, triangle);
+    const double matrice2[3][4] =
+        {{43.3, 324, 23.5 , 12.4},
+         {7   , 54 , 4.543, 61  },
+         {42  , 4.3, 342.3, 32.3}};
 
-    double matrice1[][3] =
-    {{15, 14, 12},
-     {6 , 7 , 1 },
-     {54, 5 , 7 }};
+    double multiplying_result[3][4] = {{}};
+    multiply_matrices(*multiplying_result, *matrice1, *matrice2, 3, 3, 4, 3);
+    print_matrice(*multiplying_result, 4, 3);
+    printf("-------------\n");
 
-    printf("det = %f\n", determinant(*matrice1, 3));
-    print_matrice(*matrice1, 3, 3);
-    printf("--------------\n");
+    const double matrice3[3][3] =
+        {{423.4, 43.4,  43  },
+         {43.4 , 342.3, 34.3},
+         {1    , 312.2, 32.1}};
+    double adding_result[3][3] = {{}};
+    add_matrices(*adding_result, *matrice1, *matrice3, 3, 3);
+    print_matrice(*adding_result, 3, 3);
+    printf("-------------\n");
 
-    const double matrice2[][3] =
-    {{1 , 3, 5},
-     {12, 1, 2},
-     {2 , 5, 4}};
+    double transposing_result[4][3] = {{}};
+    transpose_matrice(*transposing_result, *matrice2, 4, 3);
+    print_matrice(*transposing_result, 3, 4);
+    printf("-------------\n");
 
-    double matrice[3][3] = {{}};
-
-    multiply_matrices(*matrice, *matrice1, *matrice2, 3, 3, 3, 3);
-
-    print_matrice(*matrice, 3, 3);
-
-    const double m[2][3] =
-        {{1, 2, 3},
-         {4, 5, 6}};
-    double res[3][2] = {{}};
-    transpose_matrice(*res, *m, 3, 2);
-    print_matrice(*res, 2, 3);
+    printf("%lg", determinant(*matrice3, 3));
 }
