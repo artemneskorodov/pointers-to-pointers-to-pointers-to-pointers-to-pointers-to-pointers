@@ -1,6 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "triangle_array.h"
+
 void print_triangle(size_t sizeY, int *triangle) {
     size_t offset = 0;
     for(size_t y = 0; y < sizeY; y++) {
