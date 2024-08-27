@@ -9,7 +9,7 @@ enum matrice_state_t {
     MATRICE_SUCCESS
 };
 
-void print_matrice(double *matrice, size_t width, size_t height);
+void print_matrice(const double *matrice, size_t width, size_t height);
 
 matrice_state_t add_matrices(double *result, const double *first, const double *second, size_t width, size_t height);
 

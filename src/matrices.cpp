@@ -6,13 +6,13 @@
 
 static bool is_zero(double number);
 
-void print_matrice(double *matrice, size_t width, size_t height) {
+void print_matrice(const double *matrice, size_t width, size_t height) {
     assert(matrice != NULL);
 
     for(size_t y = 0; y < height; y++) {
         printf("|");
         for(size_t x = 0; x < width; x++)
-            printf("%f ", matrice[y * width + x]);
+            printf("%f  ", matrice[y * width + x]);
         printf("|\n");
     }
 }

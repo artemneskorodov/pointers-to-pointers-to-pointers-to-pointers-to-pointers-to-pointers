@@ -4,7 +4,7 @@ void print_triangle(size_t sizeY, int *triangle) {
     size_t offset = 0;
     for(size_t y = 0; y < sizeY; y++) {
         for(size_t x = 0; x < y; x++, offset++)
-            printf("tr[%llu][%llu] = %d ", y, x, triangle[offset]);
+            printf("tr[%llu][%llu] = %d  ", y, x, triangle[offset]);
         printf("\n");
     }
 }
